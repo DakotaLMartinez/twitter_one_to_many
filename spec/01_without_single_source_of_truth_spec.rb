@@ -73,19 +73,19 @@ RSpec.describe "Without Single Source of Truth" do
       end
     end
 
-    describe "#username" do
-      it "returns the username of the user who made the tweet" do 
-        user = User.new(username: "Angela")
-        tweet = Tweet.new(message: "When you make it to the burrito place right before it closes #relieved", user: user)
-        expect(tweet.username).to eq("Angela")
-      end
-    end
-
     describe "#message" do
       it "returns the value of the tweet's message attribute" do 
         user = User.new(username: "Angela")
         tweet = Tweet.new(message: "When you make it to the burrito place right before it closes #relieved", user: user)
         expect(tweet.message).to eq("When you make it to the burrito place right before it closes #relieved")
+      end
+    end
+
+    describe "#username" do
+      it "returns the username of the user who made the tweet" do 
+        user = User.new(username: "Angela")
+        tweet = Tweet.new(message: "When you make it to the burrito place right before it closes #relieved", user: user)
+        expect(tweet.username).to eq("Angela")
       end
     end
   end
